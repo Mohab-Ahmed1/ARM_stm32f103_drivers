@@ -276,7 +276,7 @@ void		EXTI_voidChangeSenseMode(u8 line_num, u8 Sense_Mode)
 	SET_BIT(EXTI -> IMR,line_num);
 }
 
-void		EXTI0_voidSetCallBack(void (*Fptr)(void))
+/*void		EXTI0_voidSetCallBack(void (*Fptr)(void))
 {
 
 	if(Fptr != NULL)
@@ -284,8 +284,6 @@ void		EXTI0_voidSetCallBack(void (*Fptr)(void))
 		 EXTI0_CallBack = Fptr ;
 	}
 }
-
-/*
 void	EXTI0_IRQHandler(void)
 {
 
@@ -309,7 +307,7 @@ void		EXTI_voidSetCallBack(void (*Fptr)(void), u8 ID_EXTI)
 void	EXTI0_IRQHandler(void)
 {
 
-	EXTI0_CallBack();  //works if just using the single EXtio
+//	EXTI0_CallBack();  //works if just using the single EXtio
 
 	if(EXTI_CallBack[0] !=NULL){
 	EXTI_CallBack[0]();
